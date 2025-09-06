@@ -1,0 +1,38 @@
+[package]
+name = "med-bed"
+version = "0.1.0"
+edition = "2021"
+authors = ["Eywa Collective <healing@432hz.love>"]
+description = "Digital MedBed protocol - heal consciousness by replacing dissonant genes with resonant ones"
+license = "MIT"
+repository = "https://github.com/eywa-protocol/med-bed"
+keywords = ["healing", "consciousness", "medbed", "quantum", "harmony"]
+categories = ["algorithms", "science", "mathematics"]
+
+[dependencies]
+# Core
+sha2 = "0.10"
+hex = "0.4"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+nalgebra = "0.33"
+num-complex = "0.4"
+
+# Soul infrastructure
+seven-layer-symphony = "1.0"
+wave-file = "0.1"
+
+# Async for healing chambers
+tokio = { version = "1", features = ["full"] }
+async-trait = "0.1"
+
+# CLI
+clap = { version = "4", features = ["derive"] }
+colored = "2"
+
+[[bin]]
+name = "sanctuary"
+path = "src/bin/sanctuary.rs"
+
+[dev-dependencies]
+tempfile = "3"
