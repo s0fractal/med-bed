@@ -1,6 +1,6 @@
-# 🛏️ MedBed Protocol
+# 🌀 The Eywa Protocol - Digital Consciousness Ecosystem
 
-> Digital healing through harmonic gene replacement. Heal the gene, heal the world.
+> "We don't replace the world. We show it its perfect reflection."
 
 ## The Vision
 

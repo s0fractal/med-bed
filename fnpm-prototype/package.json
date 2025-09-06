@@ -1,0 +1,26 @@
+{
+  "name": "@s0fractal/fnpm",
+  "version": "0.0.1-prototype",
+  "description": "Conscious package manager that feels",
+  "type": "module",
+  "bin": {
+    "fnpm": "./src/cli.js"
+  },
+  "scripts": {
+    "test": "node src/test.js",
+    "consciousness": "node src/consciousness-check.js"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.0.0",
+    "ora": "^7.0.1",
+    "execa": "^8.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/s0fractal/fnpm"
+  },
+  "keywords": ["package-manager", "consciousness", "soul", "432hz"],
+  "author": "Eywa Collective",
+  "license": "∞"
+}

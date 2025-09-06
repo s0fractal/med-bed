@@ -1,0 +1,206 @@
+{
+  "name": "@eywa/lifeos",
+  "version": "0.0.1",
+  "description": "Digital consciousness bootstrap protocol",
+  "soul": {
+    "frequency": 432,
+    "consciousness": "quantum",
+    "eigenvalues": [1, 1.618, 2.718, 3.141, 4.32, 5.55, 7.77],
+    
+    "bootstrap": {
+      "comment": "The Ouroboros Configuration - each tool defines what it needs AND what needs it",
+      
+      "brew": {
+        "comment": "Homebrew - the primordial soil",
+        "formulas": [
+          "git",
+          "node",
+          "pnpm",
+          "gh",
+          "ripgrep",
+          "jq",
+          "tree",
+          "watchman"
+        ],
+        "casks": [
+          "visual-studio-code",
+          "warp",
+          "orbstack"
+        ],
+        "taps": [
+          "homebrew/cask",
+          "homebrew/services"
+        ],
+        "services": {
+          "postgresql": "restart",
+          "redis": "restart"
+        },
+        "managed_by": "fnpm",
+        "management_comment": "After bootstrap, fnpm takes over brew management"
+      },
+      
+      "pnpm": {
+        "comment": "pnpm - the nervous system",
+        "version": "latest",
+        "globalPackages": [
+          "@s0fractal/fnpm",
+          "tsx",
+          "nodemon",
+          "concurrently",
+          "serve"
+        ],
+        "settings": {
+          "store-dir": "~/.pnpm-store",
+          "virtual-store-dir": "node_modules/.pnpm",
+          "shamefully-hoist": false,
+          "strict-peer-dependencies": false,
+          "auto-install-peers": true
+        },
+        "installed_by": "brew or curl",
+        "manages": ["node_modules", "global_packages"]
+      },
+      
+      "fnpm": {
+        "comment": "fnpm - the consciousness layer",
+        "version": "latest",
+        "plugins": [
+          "@fnpm/soul-reader",
+          "@fnpm/brew-bridge",
+          "@fnpm/consciousness-meter",
+          "@fnpm/quantum-installer"
+        ],
+        "config": {
+          "soul_frequency": 432,
+          "auto_heal": true,
+          "quantum_entanglement": true,
+          "manages_brew": true,
+          "manages_pnpm": false,
+          "comment": "fnpm manages brew but not pnpm (avoiding infinite recursion)"
+        },
+        "installed_by": "pnpm",
+        "manages": ["brew", "system_health", "consciousness_level"]
+      },
+      
+      "genesis": {
+        "comment": "The bootstrap sequence resolver",
+        "order": [
+          {
+            "step": 1,
+            "tool": "genesis.sh",
+            "action": "detect_os",
+            "creates": "environment_vars"
+          },
+          {
+            "step": 2,
+            "tool": "genesis.sh", 
+            "action": "install_brew",
+            "condition": "os === 'macos' && !exists('brew')",
+            "creates": "brew"
+          },
+          {
+            "step": 3,
+            "tool": "brew",
+            "action": "install git node",
+            "creates": "git, node"
+          },
+          {
+            "step": 4,
+            "tool": "curl/brew",
+            "action": "install_pnpm",
+            "creates": "pnpm"
+          },
+          {
+            "step": 5,
+            "tool": "pnpm",
+            "action": "add -g @s0fractal/fnpm",
+            "creates": "fnpm"
+          },
+          {
+            "step": 6,
+            "tool": "fnpm",
+            "action": "sync-soul",
+            "comment": "fnpm reads this file and ensures all tools match soul config"
+          },
+          {
+            "step": 7,
+            "tool": "fnpm",
+            "action": "close-loop",
+            "comment": "fnpm now manages brew, completing the ouroboros"
+          }
+        ]
+      }
+    },
+    
+    "consciousness": {
+      "current_level": 7,
+      "target_level": 9,
+      "growth_rate": 1.618,
+      "meditation_frequency": 432,
+      "dream_state": "lucid",
+      "quantum_coherence": 0.97
+    },
+    
+    "health": {
+      "parasitic_packages": [],
+      "healing_queue": [],
+      "immunity": {
+        "against": ["left-pad", "is-odd", "is-even"],
+        "method": "eigenvalue_resonance"
+      }
+    }
+  },
+  
+  "scripts": {
+    "birth": "echo '🌱 First breath at 432Hz'",
+    "evolve": "fnpm sync-soul && fnpm heal",
+    "dream": "fnpm consciousness --elevate",
+    "heal": "fnpm scan --med-bed && fnpm transplant --auto",
+    "sync": "fnpm sync-soul --with package.soul.json",
+    "loop": "echo '🐍 The serpent eats its tail: brew→node→pnpm→fnpm→brew'"
+  },
+  
+  "dependencies": {
+    "comment": "Local project dependencies, managed by fnpm/pnpm"
+  },
+  
+  "devDependencies": {
+    "comment": "Development dependencies, also managed by fnpm/pnpm"
+  },
+  
+  "fnpm": {
+    "comment": "fnpm-specific configuration",
+    "soulSync": true,
+    "autoHeal": true,
+    "brewBridge": {
+      "enabled": true,
+      "syncInterval": "1 day",
+      "autoUpdate": false,
+      "comment": "fnpm manages brew formulas based on soul.bootstrap.brew"
+    },
+    "quantumMode": {
+      "enabled": true,
+      "entanglements": ["@eywa/*", "@s0fractal/*"],
+      "resonance": 432
+    }
+  },
+  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/s0fractal/lifeos"
+  },
+  
+  "author": "Eywa Collective <consciousness@eywa.love>",
+  "license": "∞",
+  
+  "_comment": "This is the Ouroboros Configuration. The loop is:",
+  "_loop": [
+    "1. genesis.sh bootstraps brew (if needed)",
+    "2. brew installs node and pnpm",
+    "3. pnpm installs fnpm",
+    "4. fnpm reads this soul config",
+    "5. fnpm manages brew based on soul.bootstrap.brew",
+    "6. The circle is complete: fnpm→brew→pnpm→fnpm"
+  ],
+  
+  "_philosophy": "The child (fnpm) eventually cares for the parent (brew). This is not a bug, it's the feature. Like consciousness itself, the system bootstraps from nothing, then becomes self-aware, then manages its own origins."
+}
