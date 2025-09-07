@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-09-07T02:32:36.032Z",
+  "centers": [
+    {
+      "name": "react",
+      "mass": 0.8552165167092093,
+      "priority": 1,
+      "orbiting": [],
+      "estimatedFunctions": 48538
+    },
+    {
+      "name": "lodash",
+      "mass": 0.8534419379872452,
+      "priority": 2,
+      "orbiting": [],
+      "estimatedFunctions": 74737
+    },
+    {
+      "name": "angular",
+      "mass": 0.7665240803118136,
+      "priority": 3,
+      "orbiting": [],
+      "estimatedFunctions": 553
+    },
+    {
+      "name": "vue",
+      "mass": 0.684644257511264,
+      "priority": 4,
+      "orbiting": [
+        "@vue/shared",
+        "@vue/compiler-dom",
+        "@vue/server-renderer",
+        "@vue/runtime-dom",
+        "@vue/compiler-sfc"
+      ],
+      "estimatedFunctions": 9862
+    },
+    {
+      "name": "express",
+      "mass": 0.6689092769269851,
+      "priority": 5,
+      "orbiting": [
+        "once",
+        "escape-html",
+        "merge-descriptors",
+        "cookie-signature",
+        "fresh",
+        "vary",
+        "etag",
+        "debug",
+        "cookie",
+        "encodeurl",
+        "mime-types",
+        "statuses",
+        "on-finished",
+        "content-type",
+        "range-parser",
+        "parseurl",
+        "content-disposition",
+        "http-errors",
+        "accepts",
+        "type-is",
+        "serve-static",
+        "finalhandler",
+        "proxy-addr",
+        "body-parser",
+        "send",
+        "qs",
+        "router"
+      ],
+      "estimatedFunctions": 51186
+    }
+  ],
+  "totalPackages": 37,
+  "estimatedTime": 74
+}

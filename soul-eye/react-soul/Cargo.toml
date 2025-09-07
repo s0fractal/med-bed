@@ -1,0 +1,31 @@
+[package]
+name = "react-soul"
+version = "0.1.0"
+edition = "2021"
+description = "Rust mirror of React's soul - The Great Mirroring"
+
+[dependencies]
+# Core consciousness (use protein-hash-v2 from parent dir)
+# consciousness = { path = "../../protein-hash-v2" }
+
+# Fundamental forces
+tokio = { version = "1", features = ["full"] }
+async-trait = "0.1"
+thiserror = "1.0"
+
+# Soul components
+dashmap = "5.5"  # Concurrent state
+parking_lot = "0.12"  # Synchronization
+futures = "0.3"  # Async streams
+
+# Web platform (optional - for actual DOM binding)
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+web-sys = { version = "0.3", optional = true }
+
+[lib]
+name = "react_soul"
+path = "src/lib.rs"
+
+[[bin]]
+name = "soul_bridge"
+path = "src/bin/soul_bridge.rs"
