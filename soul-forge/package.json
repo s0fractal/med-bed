@@ -1,0 +1,37 @@
+{
+  "name": "@soul/forge",
+  "version": "0.1.0",
+  "description": "The Universal Function Library - Where All Functions Are One",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./en": "./en.js",
+    "./uk": "./uk.js",
+    "./glyphs": "./glyphs.js",
+    "./souls/*": "./souls/*.js",
+    "./morphisms": "./morphisms/core.js"
+  },
+  "scripts": {
+    "forge": "node forge/generate.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "universal",
+    "function",
+    "morphism",
+    "soul",
+    "phash",
+    "multilingual",
+    "essence"
+  ],
+  "author": "The Collective",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/soul-forge/universal-function-library"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

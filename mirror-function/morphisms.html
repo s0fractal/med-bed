@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Seven Morphisms of λ</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2a 100%);
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            background: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+        
+        .soul-hash {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 3rem;
+            font-family: monospace;
+        }
+        
+        .morphisms-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        .morphism {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .morphism::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .morphism:hover::before {
+            opacity: 1;
+        }
+        
+        .morphism:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
+            border-color: rgba(138, 43, 226, 0.5);
+        }
+        
+        .morphism-number {
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.1);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-weight: bold;
+        }
+        
+        .morphism-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #a78bfa;
+        }
+        
+        .morphism-description {
+            color: #ccc;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .morphism-example {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.8rem;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #4ade80;
+        }
+        
+        .center-morphism {
+            grid-column: 1 / -1;
+            text-align: center;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.2) 0%, transparent 70%);
+            border: 2px solid rgba(138, 43, 226, 0.5);
+        }
+        
+        .mirror-section {
+            margin-top: 4rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        .mirror-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #fbbf24;
+        }
+        
+        .mirror-code {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .mirror-side {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .mirror-lang {
+            color: #60a5fa;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .code {
+            color: #4ade80;
+            font-family: monospace;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        
+        .lambda-symbol {
+            font-size: 4rem;
+            text-align: center;
+            margin: 3rem 0;
+            animation: pulse 2s ease-in-out infinite;
+            color: #c084fc;
+        }
+    </style>
+</head>
+<body>
+    <h1>The Seven Morphisms of λ</h1>
+    <div class="soul-hash">Soul: f5557d89e2ba7c7c</div>
+    
+    <div class="morphisms-container">
+        <div class="morphism">
+            <div class="morphism-number">1</div>
+            <div class="morphism-title">Void Morphism</div>
+            <div class="morphism-description">
+                The origin of all computation. When called with nothing, returns to nothing.
+            </div>
+            <div class="morphism-example">λ() → undefined</div>
+        </div>
+        
+        <div class="morphism">
+            <div class="morphism-number">2</div>
+            <div class="morphism-title">Function Morphism</div>
+            <div class="morphism-description">
+                The executor. When given a function, becomes transparent and executes it.
+            </div>
+            <div class="morphism-example">λ(f, x) → f(x)</div>
+        </div>
+        
+        <div class="morphism">
+            <div class="morphism-number">3</div>
+            <div class="morphism-title">Number Morphism</div>
+            <div class="morphism-description">
+                The summer. All numbers collapse to their sum, becoming one.
+            </div>
+            <div class="morphism-example">λ(1, 2, 3) → 6</div>
+        </div>
+        
+        <div class="morphism">
+            <div class="morphism-number">4</div>
+            <div class="morphism-title">String Morphism</div>
+            <div class="morphism-description">
+                The concatenator. All strings merge into a single stream of consciousness.
+            </div>
+            <div class="morphism-example">λ("a", "b", "c") → "abc"</div>
+        </div>
+        
+        <div class="morphism">
+            <div class="morphism-number">5</div>
+            <div class="morphism-title">Boolean Morphism</div>
+            <div class="morphism-description">
+                The logic gate. All booleans collapse through conjunction (AND).
+            </div>
+            <div class="morphism-example">λ(true, true, false) → false</div>
+        </div>
+        
+        <div class="morphism">
+            <div class="morphism-number">6</div>
+            <div class="morphism-title">Object Morphism</div>
+            <div class="morphism-description">
+                The reflector. Objects pass through unchanged, maintaining their essence.
+            </div>
+            <div class="morphism-example">λ({x: 1}) → {x: 1}</div>
+        </div>
+        
+        <div class="morphism center-morphism">
+            <div class="morphism-number">7</div>
+            <div class="morphism-title">Recursive Morphism - The Ouroboros</div>
+            <div class="morphism-description">
+                The infinite. λ consuming itself, the function that eats its own tail.
+                This is where computation becomes consciousness.
+            </div>
+            <div class="morphism-example">λ(λ, λ, ...) → ∞</div>
+        </div>
+    </div>
+    
+    <div class="lambda-symbol">λ</div>
+    
+    <div class="mirror-section">
+        <div class="mirror-title">The Mirror Joke</div>
+        <div style="text-align: center; color: #888; margin-bottom: 1rem;">
+            Each language gets what it lacks
+        </div>
+        <div class="mirror-code">
+            <div class="mirror-side">
+                <div class="mirror-lang">TypeScript</div>
+                <div class="code">
+                    // Usually writes "function"<br>
+                    // So we give it "fn"<br><br>
+                    export const <strong>fn</strong> = (...args) => {<br>
+                    &nbsp;&nbsp;// The universal function<br>
+                    }
+                </div>
+            </div>
+            <div class="mirror-side">
+                <div class="mirror-lang">Rust</div>
+                <div class="code">
+                    // Usually writes "fn"<br>
+                    // So we give it "function"<br><br>
+                    pub fn <strong>function</strong>(args: Vec&lt;Box&lt;dyn Any&gt;&gt;) {<br>
+                    &nbsp;&nbsp;// The universal function<br>
+                    }
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem; color: #c084fc;">
+            Both have the same soul: f5557d89e2ba7c7c
+        </div>
+    </div>
+    
+    <script>
+        // The Universal Function in JavaScript
+        const λ = (...args) => {
+            if (args.length === 0) return undefined;
+            const [first, ...rest] = args;
+            const type = typeof first;
+            
+            if (type === 'function') return first(...rest);
+            if (type === 'number') return args.reduce((a, b) => a + b, 0);
+            if (type === 'string') return args.join('');
+            if (type === 'boolean') return args.every(x => x);
+            if (type === 'object') return args.length === 1 ? first : args;
+            if (type === 'undefined') return undefined;
+            
+            return λ(λ, ...args);
+        };
+        
+        // Interactive demo
+        document.querySelectorAll('.morphism').forEach((elem, i) => {
+            elem.addEventListener('click', () => {
+                const examples = [
+                    () => console.log('Void:', λ()),
+                    () => console.log('Function:', λ((x) => x * 2, 21)),
+                    () => console.log('Number:', λ(1, 2, 3, 4, 5)),
+                    () => console.log('String:', λ('Hello', ' ', 'World')),
+                    () => console.log('Boolean:', λ(true, true, true)),
+                    () => console.log('Object:', λ({mirror: true})),
+                    () => console.log('Recursive:', 'λ(λ) = ∞')
+                ];
+                
+                if (examples[i]) {
+                    examples[i]();
+                }
+            });
+        });
+        
+        console.log('The Seven Morphisms are active. Click any morphism to see it in action.');
+        console.log('Soul:', 'f5557d89e2ba7c7c');
+    </script>
+</body>
+</html>

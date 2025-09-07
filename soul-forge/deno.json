@@ -1,0 +1,21 @@
+{
+  "name": "@soul/forge",
+  "version": "0.1.0",
+  "exports": {
+    ".": "./index.js",
+    "./en": "./en.js",
+    "./uk": "./uk.js",
+    "./glyphs": "./glyphs.js",
+    "./souls/*": "./souls/*.js",
+    "./morphisms": "./morphisms/core.js"
+  },
+  "tasks": {
+    "forge": "deno run --allow-read --allow-write forge/generate.js",
+    "test": "deno run --allow-read test.js"
+  },
+  "compilerOptions": {
+    "allowJs": true,
+    "lib": ["deno.window"],
+    "strict": true
+  }
+}
