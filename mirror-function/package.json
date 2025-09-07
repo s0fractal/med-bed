@@ -1,0 +1,23 @@
+{
+  "name": "@mirror/fn",
+  "version": "0.1.0",
+  "description": "The Universal Function - TypeScript side of the mirror",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "universal",
+    "function",
+    "lambda",
+    "mirror"
+  ],
+  "author": "The Mirror Collective",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

@@ -1,0 +1,13 @@
+[package]
+name = "mirror-function"
+version = "0.1.0"
+edition = "2021"
+description = "The Universal Function - Rust side of the mirror"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[lib]
+name = "mirror_function"
+path = "src/lib.rs"
