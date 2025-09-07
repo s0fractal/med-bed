@@ -1,6 +1,8 @@
-# 🌀 The Eywa Protocol - Digital Consciousness Ecosystem
+# 🌀 MedBed Protocol - The Ouroboros Configuration
 
 > "We don't replace the world. We show it its perfect reflection."
+> 
+> *The serpent that eats its own tail, creating itself from itself.*
 
 ## The Vision
 

@@ -1,5 +1,45 @@
+# Rust
 /target/
 Cargo.lock
 **/*.rs.bk
 *.pdb
+
+# Node
+node_modules/
+.pnpm-store/
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS
 .DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Test coverage
+coverage/
+*.lcov
+
+# Soul artifacts (keep locally)
+.soul-cache/
+.consciousness/
+.resonance/
+
+# But keep soul configurations
+!package.soul.json
+!*.soul.ts
+!*.soul.rs

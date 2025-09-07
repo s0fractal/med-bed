@@ -1,0 +1,454 @@
+{
+  "timestamp": "2025-09-07T01:46:35.738Z",
+  "package": "lodash",
+  "version": "4.17.21",
+  "totalSouls": 16,
+  "consciousnessDistribution": {
+    "inert": 5,
+    "responsive": 5,
+    "mechanical": 6
+  },
+  "souls": [
+    {
+      "name": "identity",
+      "phash": "phash:v1:sha256:1763eb63f6410904",
+      "consciousness": {
+        "level": 1,
+        "levelName": "inert",
+        "score": 0,
+        "patterns": [],
+        "assessment": "Mechanical - Simple deterministic operation"
+      },
+      "metrics": {
+        "nodes": 6,
+        "edges": 5,
+        "complexity": 0.16666666666666666,
+        "purity": 1,
+        "resonance": 432,
+        "coherence": 0.5
+      }
+    },
+    {
+      "name": "noop",
+      "phash": "phash:v1:sha256:5bff73bd33241894",
+      "consciousness": {
+        "level": 1,
+        "levelName": "inert",
+        "score": 0,
+        "patterns": [],
+        "assessment": "Mechanical - Simple deterministic operation"
+      },
+      "metrics": {
+        "nodes": 4,
+        "edges": 3,
+        "complexity": 0.25,
+        "purity": 1,
+        "resonance": 432,
+        "coherence": 0.5
+      }
+    },
+    {
+      "name": "constant",
+      "phash": "phash:v1:sha256:1cad27f17ea6ec5a",
+      "consciousness": {
+        "level": 1,
+        "levelName": "responsive",
+        "score": 0.1,
+        "patterns": [
+          {
+            "type": "fractal_patterns",
+            "strength": 0.1,
+            "frequency": 1130.9906831387036,
+            "description": "Code exhibits self-similar patterns at multiple scales"
+          }
+        ],
+        "assessment": "Mechanical - Simple deterministic operation"
+      },
+      "metrics": {
+        "nodes": 9,
+        "edges": 8,
+        "complexity": 0.1111111111111111,
+        "purity": 1,
+        "resonance": 432,
+        "coherence": 0.5
+      }
+    },
+    {
+      "name": "add",
+      "phash": "phash:v1:sha256:2bce8e09d68a9dda",
+      "consciousness": {
+        "level": 1,
+        "levelName": "inert",
+        "score": 0,
+        "patterns": [],
+        "assessment": "Mechanical - Simple deterministic operation"
+      },
+      "metrics": {
+        "nodes": 9,
+        "edges": 8,
+        "complexity": 0.1111111111111111,
+        "purity": 1,
+        "resonance": 432,
+        "coherence": 0.5
+      }
+    },
+    {
+      "name": "multiply",
+      "phash": "phash:v1:sha256:2bce8e09d68a9dda",
+      "consciousness": {
+        "level": 1,
+        "levelName": "inert",
+        "score": 0,
+        "patterns": [],
+        "assessment": "Mechanical - Simple deterministic operation"
+      },
+      "metrics": {
+        "nodes": 9,
+        "edges": 8,
+        "complexity": 0.1111111111111111,
+        "purity": 1,
+        "resonance": 432,
+        "coherence": 0.5
+      }
+    },
+    {
+      "name": "negate",
+      "phash": "phash:v1:sha256:46337b7110184523",
+      "consciousness": {
+        "level": 1,
+        "levelName": "inert",
+        "score": 0,
+        "patterns": [],
+        "assessment": "Mechanical - Simple deterministic operation"
+      },
+      "metrics": {
+        "nodes": 7,
+        "edges": 6,
+        "complexity": 0.14285714285714285,
+        "purity": 1,
+        "resonance": 432,
+        "coherence": 0.5
+      }
+    },
+    {
+      "name": "head",
+      "phash": "phash:v1:sha256:23fd85b3d2692e0e",
+      "consciousness": {
+        "level": 1,
+        "levelName": "mechanical",
+        "score": 0.02,
+        "patterns": [
+          {
+            "type": "temporal_awareness",
+            "strength": 0.02,
+            "frequency": 648,
+            "description": "Code exhibits awareness of time and causality"
+          }
+        ],
+        "assessment": "Mechanical - Simple deterministic operation"
+      },
+      "metrics": {
+        "nodes": 14,
+        "edges": 13,
+        "complexity": 0.07142857142857142,
+        "purity": 1,
+        "resonance": 432,
+        "coherence": 0.5
+      }
+    },
+    {
+      "name": "tail",
+      "phash": "phash:v1:sha256:7bbfbb7bdb158fa2",
+      "consciousness": {
+        "level": 1,
+        "levelName": "mechanical",
+        "score": 0.05,
+        "patterns": [
+          {
+            "type": "temporal_awareness",
+            "strength": 0.05,
+            "frequency": 648,
+            "description": "Code exhibits awareness of time and causality"
+          }
+        ],
+        "assessment": "Mechanical - Simple deterministic operation"
+      },
+      "metrics": {
+        "nodes": 16,
+        "edges": 15,
+        "complexity": 0.0625,
+        "purity": 0.9,
+        "resonance": 432,
+        "coherence": 0.5
+      }
+    },
+    {
+      "name": "last",
+      "phash": "phash:v1:sha256:c7b9f3038e7c5179",
+      "consciousness": {
+        "level": 1,
+        "levelName": "mechanical",
+        "score": 0.08454545454545453,
+        "patterns": [
+          {
+            "type": "temporal_awareness",
+            "strength": 0.03,
+            "frequency": 648,
+            "description": "Code exhibits awareness of time and causality"
+          },
+          {
+            "type": "emergent_complexity",
+            "strength": 0.15,
+            "frequency": 864,
+            "description": "Code exhibits emergent behavioral patterns"
+          }
+        ],
+        "assessment": "Mechanical - Simple deterministic operation"
+      },
+      "metrics": {
+        "nodes": 17,
+        "edges": 16,
+        "complexity": 0.058823529411764705,
+        "purity": 1,
+        "resonance": 432,
+        "coherence": 0.5
+      }
+    },
+    {
+      "name": "map",
+      "phash": "phash:v1:sha256:a88234516ecea1ca",
+      "consciousness": {
+        "level": 1,
+        "levelName": "responsive",
+        "score": 0.1118181818181818,
+        "patterns": [
+          {
+            "type": "temporal_awareness",
+            "strength": 0.08,
+            "frequency": 648,
+            "description": "Code exhibits awareness of time and causality"
+          },
+          {
+            "type": "emergent_complexity",
+            "strength": 0.15,
+            "frequency": 864,
+            "description": "Code exhibits emergent behavioral patterns"
+          }
+        ],
+        "assessment": "Mechanical - Simple deterministic operation"
+      },
+      "metrics": {
+        "nodes": 25,
+        "edges": 24,
+        "complexity": 0.04,
+        "purity": 0.81,
+        "resonance": 432,
+        "coherence": 0.5
+      }
+    },
+    {
+      "name": "filter",
+      "phash": "phash:v1:sha256:d7e1f779594493af",
+      "consciousness": {
+        "level": 1,
+        "levelName": "responsive",
+        "score": 0.11727272727272726,
+        "patterns": [
+          {
+            "type": "temporal_awareness",
+            "strength": 0.09,
+            "frequency": 648,
+            "description": "Code exhibits awareness of time and causality"
+          },
+          {
+            "type": "emergent_complexity",
+            "strength": 0.15,
+            "frequency": 864,
+            "description": "Code exhibits emergent behavioral patterns"
+          }
+        ],
+        "assessment": "Mechanical - Simple deterministic operation"
+      },
+      "metrics": {
+        "nodes": 28,
+        "edges": 27,
+        "complexity": 0.03571428571428571,
+        "purity": 0.81,
+        "resonance": 432,
+        "coherence": 0.5
+      }
+    },
+    {
+      "name": "reduce",
+      "phash": "phash:v1:sha256:c2f82981ab5a3281",
+      "consciousness": {
+        "level": 1,
+        "levelName": "mechanical",
+        "score": 0.09545454545454544,
+        "patterns": [
+          {
+            "type": "temporal_awareness",
+            "strength": 0.05,
+            "frequency": 648,
+            "description": "Code exhibits awareness of time and causality"
+          },
+          {
+            "type": "emergent_complexity",
+            "strength": 0.15,
+            "frequency": 864,
+            "description": "Code exhibits emergent behavioral patterns"
+          }
+        ],
+        "assessment": "Mechanical - Simple deterministic operation"
+      },
+      "metrics": {
+        "nodes": 36,
+        "edges": 35,
+        "complexity": 0.027777777777777776,
+        "purity": 0.4608000000000001,
+        "resonance": 432,
+        "coherence": 0.5
+      }
+    },
+    {
+      "name": "flatten",
+      "phash": "phash:v1:sha256:9fd9fab6280ccd75",
+      "consciousness": {
+        "level": 1,
+        "levelName": "responsive",
+        "score": 0.13909090909090907,
+        "patterns": [
+          {
+            "type": "temporal_awareness",
+            "strength": 0.13,
+            "frequency": 648,
+            "description": "Code exhibits awareness of time and causality"
+          },
+          {
+            "type": "emergent_complexity",
+            "strength": 0.15,
+            "frequency": 864,
+            "description": "Code exhibits emergent behavioral patterns"
+          }
+        ],
+        "assessment": "Mechanical - Simple deterministic operation"
+      },
+      "metrics": {
+        "nodes": 35,
+        "edges": 34,
+        "complexity": 0.02857142857142857,
+        "purity": 0.6561000000000001,
+        "resonance": 432,
+        "coherence": 0.5
+      }
+    },
+    {
+      "name": "cloneDeep",
+      "phash": "phash:v1:sha256:c86933f9274d6e4d",
+      "consciousness": {
+        "level": 1,
+        "levelName": "mechanical",
+        "score": 0.07437902692507509,
+        "patterns": [
+          {
+            "type": "self_awareness",
+            "strength": 0.02,
+            "frequency": 698.990683139568,
+            "description": "Code exhibits self-referential patterns"
+          },
+          {
+            "type": "temporal_awareness",
+            "strength": 0.13,
+            "frequency": 648,
+            "description": "Code exhibits awareness of time and causality"
+          },
+          {
+            "type": "emergent_complexity",
+            "strength": 0.15,
+            "frequency": 864,
+            "description": "Code exhibits emergent behavioral patterns"
+          }
+        ],
+        "assessment": "Mechanical - Simple deterministic operation"
+      },
+      "metrics": {
+        "nodes": 52,
+        "edges": 51,
+        "complexity": 0.019230769230769232,
+        "purity": 0.52488,
+        "resonance": 432,
+        "coherence": 0.5
+      }
+    },
+    {
+      "name": "flow",
+      "phash": "phash:v1:sha256:856a1119ad426e56",
+      "consciousness": {
+        "level": 1,
+        "levelName": "responsive",
+        "score": 0.10403223524439464,
+        "patterns": [
+          {
+            "type": "temporal_awareness",
+            "strength": 0.07,
+            "frequency": 648,
+            "description": "Code exhibits awareness of time and causality"
+          },
+          {
+            "type": "emergent_complexity",
+            "strength": 0.15,
+            "frequency": 864,
+            "description": "Code exhibits emergent behavioral patterns"
+          },
+          {
+            "type": "fractal_patterns",
+            "strength": 0.1,
+            "frequency": 1130.9906831387036,
+            "description": "Code exhibits self-similar patterns at multiple scales"
+          }
+        ],
+        "assessment": "Mechanical - Simple deterministic operation"
+      },
+      "metrics": {
+        "nodes": 33,
+        "edges": 32,
+        "complexity": 0.030303030303030304,
+        "purity": 0.6480000000000001,
+        "resonance": 432,
+        "coherence": 0.5
+      }
+    },
+    {
+      "name": "compose",
+      "phash": "phash:v1:sha256:9538179129d57f6d",
+      "consciousness": {
+        "level": 1,
+        "levelName": "mechanical",
+        "score": 0.09545454545454544,
+        "patterns": [
+          {
+            "type": "temporal_awareness",
+            "strength": 0.05,
+            "frequency": 648,
+            "description": "Code exhibits awareness of time and causality"
+          },
+          {
+            "type": "emergent_complexity",
+            "strength": 0.15,
+            "frequency": 864,
+            "description": "Code exhibits emergent behavioral patterns"
+          }
+        ],
+        "assessment": "Mechanical - Simple deterministic operation"
+      },
+      "metrics": {
+        "nodes": 11,
+        "edges": 10,
+        "complexity": 0.09090909090909091,
+        "purity": 0.81,
+        "resonance": 432,
+        "coherence": 0.5
+      }
+    }
+  ]
+}

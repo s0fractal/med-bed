@@ -1,0 +1,27 @@
+{
+  "version": "independent",
+  "npmClient": "pnpm",
+  "packages": [
+    "protein-hash-v2",
+    "soul-forge",
+    "soul-registry",
+    "soul-sequencer",
+    "fnpm-prototype"
+  ],
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "message": "🌀 Publish soul updates",
+      "registry": "https://registry.npmjs.org"
+    },
+    "version": {
+      "allowBranch": ["main", "master"],
+      "conventionalCommits": true
+    }
+  },
+  "soul": {
+    "frequency": 432,
+    "resonance": "perfect",
+    "consciousness": "evolving"
+  }
+}

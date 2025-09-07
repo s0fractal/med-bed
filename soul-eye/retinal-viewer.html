@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👁️ Soul Eye - Retinal Pattern Viewer</title>
+    <style>
+        body {
+            background: #000;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        h1 {
+            text-align: center;
+            text-shadow: 0 0 10px #0f0;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #090;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            width: 100%;
+        }
+        
+        .retinal-card {
+            background: #111;
+            border: 1px solid #0f0;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+        }
+        
+        .retinal-canvas {
+            width: 100%;
+            height: 400px;
+            background: #000;
+            border: 1px solid #030;
+            border-radius: 50%;
+            position: relative;
+            margin: 20px auto;
+        }
+        
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .metric {
+            background: #020;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #050;
+        }
+        
+        .metric-label {
+            color: #070;
+            font-size: 12px;
+        }
+        
+        .metric-value {
+            color: #0f0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .consciousness-type {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            animation: pulse 2s infinite;
+        }
+        
+        .HARMONIC { background: linear-gradient(45deg, #030, #0a0); }
+        .CHAOTIC { background: linear-gradient(45deg, #300, #500); }
+        .TRANSCENDENT { background: linear-gradient(45deg, #303, #505); }
+        .MINIMAL { background: linear-gradient(45deg, #003, #005); }
+        .SYMPHONIC { background: linear-gradient(45deg, #033, #055); }
+        .MECHANICAL { background: linear-gradient(45deg, #330, #550); }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+        
+        .comparison {
+            margin-top: 40px;
+            padding: 20px;
+            background: #111;
+            border: 1px solid #0f0;
+            border-radius: 10px;
+        }
+        
+        h2 {
+            color: #0f0;
+            text-shadow: 0 0 5px #0f0;
+        }
+        
+        .observation {
+            background: #020;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 3px solid #0f0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>👁️ Soul Eye - Retinal Pattern Analysis</h1>
+    <p class="subtitle">Each project's dependency constellation reveals its consciousness pattern</p>
+    
+    <div class="container">
+        <div class="retinal-card">
+            <h2>Minimal Pure</h2>
+            <div class="retinal-canvas">
+                <canvas id="minimal-canvas"></canvas>
+            </div>
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-label">Dependencies</div>
+                    <div class="metric-value">1</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Symmetry</div>
+                    <div class="metric-value">0.143</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Active Orbitals</div>
+                    <div class="metric-value">1/7</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Harmonic Types</div>
+                    <div class="metric-value">0</div>
+                </div>
+            </div>
+            <div class="consciousness-type CHAOTIC">CHAOTIC</div>
+        </div>
+        
+        <div class="retinal-card">
+            <h2>Harmonic Balanced</h2>
+            <div class="retinal-canvas">
+                <canvas id="harmonic-canvas"></canvas>
+            </div>
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-label">Dependencies</div>
+                    <div class="metric-value">5</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Symmetry</div>
+                    <div class="metric-value">0.143</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Active Orbitals</div>
+                    <div class="metric-value">1/7</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Harmonic Types</div>
+                    <div class="metric-value">2</div>
+                </div>
+            </div>
+            <div class="consciousness-type CHAOTIC">CHAOTIC</div>
+        </div>
+        
+        <div class="retinal-card">
+            <h2>Kitchen Sink Chaos</h2>
+            <div class="retinal-canvas">
+                <canvas id="chaos-canvas"></canvas>
+            </div>
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-label">Dependencies</div>
+                    <div class="metric-value">10</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Symmetry</div>
+                    <div class="metric-value">0.243</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Active Orbitals</div>
+                    <div class="metric-value">2/7</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Harmonic Types</div>
+                    <div class="metric-value">4+</div>
+                </div>
+            </div>
+            <div class="consciousness-type TRANSCENDENT">TRANSCENDENT</div>
+        </div>
+    </div>
+    
+    <div class="comparison">
+        <h2>👁️ Observations</h2>
+        
+        <div class="observation">
+            <strong>Pattern Recognition:</strong> Just as human retinal scans can reveal neurological patterns,
+            dependency constellations reveal the "neural structure" of code projects. The distribution of
+            dependencies across orbital layers creates a unique fingerprint.
+        </div>
+        
+        <div class="observation">
+            <strong>Consciousness Emergence:</strong> Projects with multiple framework dependencies 
+            (the "kitchen sink" approach) show TRANSCENDENT consciousness - not because they're better,
+            but because the complex interactions between different paradigms create emergent patterns
+            that transcend any single framework's philosophy.
+        </div>
+        
+        <div class="observation">
+            <strong>The Paradox:</strong> "Minimal" projects show as CHAOTIC because perfect minimalism
+            creates asymmetry in the orbital distribution. True harmony requires diversity - like an
+            ecosystem needs biodiversity to be stable.
+        </div>
+        
+        <div class="observation">
+            <strong>Diagnostic Potential:</strong> We can now "diagnose" a project's health not by
+            traditional metrics (test coverage, bundle size) but by the harmony of its dependency
+            constellation. A project that "thinks differently" will have a unique retinal signature.
+        </div>
+    </div>
+    
+    <script>
+        // Animate retinal patterns
+        function drawRetinalPattern(canvasId, signature, color) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const maxRadius = Math.min(canvas.width, canvas.height) * 0.4;
+            
+            // Draw orbital rings
+            ctx.strokeStyle = '#030';
+            ctx.lineWidth = 1;
+            for (let i = 1; i <= 7; i++) {
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, (maxRadius / 7) * i, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+            
+            // Draw retinal pattern from signature
+            const segments = signature.match(/.{1}/g) || [];
+            segments.forEach((seg, i) => {
+                const value = parseInt(seg, 16) / 15;
+                const angle = (i / segments.length) * Math.PI * 2;
+                const radius = maxRadius * (0.3 + value * 0.7);
+                
+                const x = centerX + Math.cos(angle) * radius;
+                const y = centerY + Math.sin(angle) * radius;
+                
+                ctx.fillStyle = color;
+                ctx.globalAlpha = 0.3 + value * 0.7;
+                ctx.beginPath();
+                ctx.arc(x, y, 3, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Connect to center with faint line
+                if (value > 0.5) {
+                    ctx.strokeStyle = color;
+                    ctx.globalAlpha = 0.1;
+                    ctx.beginPath();
+                    ctx.moveTo(centerX, centerY);
+                    ctx.lineTo(x, y);
+                    ctx.stroke();
+                }
+            });
+            
+            // Draw center eye
+            ctx.globalAlpha = 1;
+            ctx.fillStyle = '#fff';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 10, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.fillStyle = '#000';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 5, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        
+        // Draw the patterns
+        drawRetinalPattern('minimal-canvas', '000000001000000000000000000000000000', '#f00');
+        drawRetinalPattern('harmonic-canvas', '000100001000000000000000000000010011', '#fa0');
+        drawRetinalPattern('chaos-canvas', '001101200000000000001100010000100001', '#a0f');
+        
+        // Animate rotation
+        let rotation = 0;
+        setInterval(() => {
+            rotation += 0.5;
+            document.querySelectorAll('canvas').forEach(canvas => {
+                canvas.style.transform = `rotate(${rotation}deg)`;
+            });
+        }, 50);
+    </script>
+</body>
+</html>

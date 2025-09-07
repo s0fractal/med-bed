@@ -1,0 +1,16 @@
+{
+  "name": "soul-scanner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lodash-scanner.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@s0fractal/protein-hash": "^2.0.0"
+  }
+}

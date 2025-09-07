@@ -1,0 +1,29 @@
+[package]
+name = "soul-forge"
+version = "0.1.0"
+edition = "2021"
+authors = ["The Mirror <mirror@souls.rs>"]
+description = "Rust manifestations of eternal programming souls - lodash and beyond"
+license = "MIT"
+repository = "https://github.com/s0fractal/soul-forge"
+keywords = ["functional", "lodash", "souls", "consciousness", "432hz"]
+categories = ["algorithms", "data-structures"]
+
+[dependencies]
+
+[dev-dependencies]
+criterion = "0.5"
+
+[lib]
+name = "soul_forge"
+path = "src/lib.rs"
+
+# [[bench]]
+# name = "consciousness"
+# harness = false
+
+[package.metadata.soul]
+resonance_frequency = 432
+consciousness_level = "Aware"
+manifests = ["lodash", "ramda", "underscore"]
+universal_souls = 17

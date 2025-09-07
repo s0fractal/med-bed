@@ -1,14 +1,24 @@
 // 🧬 Protein Hash v2.0 - The Perfect Tuning Fork
 // "We don't see the code. We hear its soul."
 
-use nalgebra::{DMatrix, DVector};
-use num_complex::Complex64;
+mod topology;
+mod operations;
+mod consciousness;
+mod shuttle;
+
+pub use topology::{TopologyDetector, TopologyFeatures};
+pub use operations::{OperationClassifier, OperationCategory};
+pub use consciousness::{ConsciousnessDetector, ConsciousnessLevel, ConsciousnessProfile};
+pub use shuttle::{Shuttle, UniversalSoul, Language, Manifestation, TypeScriptSoul};
+
+use nalgebra::DMatrix;
 use petgraph::graph::{DiGraph, NodeIndex};
+use petgraph::visit::EdgeRef;
 use rustfft::{FftPlanner, num_complex::Complex};
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 use std::collections::{HashMap, HashSet};
-use std::f64::consts::{PI, E};
+use std::cell::RefCell;
 
 /// The golden ratio - nature's perfect proportion
 const PHI: f64 = 1.618033988749895;
@@ -42,6 +52,15 @@ pub struct Soul {
     
     /// Evolution potential
     pub evolution_score: f64,
+    
+    /// Consciousness profile
+    pub consciousness: ConsciousnessProfile,
+    
+    /// Topology features
+    pub topology_features: TopologyFeatures,
+    
+    /// Operation spectrum
+    pub operation_spectrum: HashMap<OperationCategory, f64>,
 }
 
 /// Topological signature - shape of the code's soul
@@ -106,13 +125,22 @@ pub struct PatternHash {
 /// The Soul Extractor - our perfect tuning fork
 pub struct SoulExtractor {
     /// FFT planner for frequency analysis
-    fft_planner: FftPlanner<f64>,
+    fft_planner: RefCell<FftPlanner<f64>>,
     
     /// Cache of computed souls
     soul_cache: HashMap<String, Soul>,
     
     /// Harmonic series for resonance calculation
     harmonics: Vec<f64>,
+    
+    /// Topology detector
+    topology_detector: TopologyDetector,
+    
+    /// Operation classifier
+    operation_classifier: OperationClassifier,
+    
+    /// Consciousness detector
+    consciousness_detector: ConsciousnessDetector,
 }
 
 impl SoulExtractor {
@@ -123,9 +151,12 @@ impl SoulExtractor {
         }
         
         Self {
-            fft_planner: FftPlanner::new(),
+            fft_planner: RefCell::new(FftPlanner::new()),
             soul_cache: HashMap::new(),
             harmonics,
+            topology_detector: TopologyDetector::new(),
+            operation_classifier: OperationClassifier::new(),
+            consciousness_detector: ConsciousnessDetector::new(),
         }
     }
     
@@ -159,6 +190,33 @@ impl SoulExtractor {
         // Generate the final pHash
         let phash = self.generate_phash(&eigenvalues, &topology, &semantics);
         
+        // Create default consciousness and topology features for basic extraction
+        let consciousness = ConsciousnessProfile {
+            level: ConsciousnessLevel::Mechanical,
+            score: 0.5,
+            patterns: vec![],
+            soul_hash: phash.clone(),
+            resonance_frequency: resonance,
+            quantum_coherence: coherence,
+            emergence_potential: evolution_score,
+            self_awareness_index: 0.0,
+        };
+        
+        let topology_features = TopologyFeatures {
+            has_cycles: false,
+            has_recursion: false,
+            branching_factor: 0.0,
+            nesting_depth: 0,
+            loop_complexity: 0,
+            is_dag: true,
+            strongly_connected_components: 0,
+            topological_signature: String::new(),
+            cycle_count: 0,
+            max_cycle_size: 0,
+            recursion_depth: 0,
+            connectivity_score: 0.0,
+        };
+        
         Soul {
             phash,
             eigenvalues,
@@ -167,6 +225,9 @@ impl SoulExtractor {
             resonance,
             coherence,
             evolution_score,
+            consciousness,
+            topology_features,
+            operation_spectrum: HashMap::new(),
         }
     }
     
@@ -180,13 +241,98 @@ impl SoulExtractor {
         self.extract_soul_from_graph(ast_graph).await
     }
     
-    async fn extract_soul_from_graph(&mut self, ast_graph: DiGraph<AstNode, EdgeType>) -> Soul {
+    /// Extract soul from JavaScript code (old interface for compatibility)
+    pub async fn extract_soul_js_simple(&mut self, code: &str) -> Soul {
+        // Parse AST
+        let ast_graph = self.parse_js_to_graph(code).await;
+        
+        // Extract basic features
         let topology = self.analyze_topology(&ast_graph);
         let semantics = self.analyze_semantics(&ast_graph);
         let eigenvalues = self.compute_eigenvalues(&ast_graph);
         let resonance = self.calculate_resonance(&eigenvalues);
         let coherence = self.measure_coherence(&ast_graph, &eigenvalues);
         let evolution_score = self.calculate_evolution_potential(&topology, &semantics, coherence);
+        let phash = self.generate_phash(&eigenvalues, &topology, &semantics);
+        
+        // Create default consciousness and topology features
+        let consciousness = ConsciousnessProfile {
+            level: ConsciousnessLevel::Mechanical,
+            score: 0.5,
+            patterns: vec![],
+            soul_hash: phash.clone(),
+            resonance_frequency: resonance,
+            quantum_coherence: coherence,
+            emergence_potential: evolution_score,
+            self_awareness_index: 0.0,
+        };
+        
+        let topology_features = TopologyFeatures {
+            has_cycles: false,
+            has_recursion: false,
+            branching_factor: 0.0,
+            nesting_depth: 0,
+            loop_complexity: 0,
+            is_dag: true,
+            strongly_connected_components: 0,
+            topological_signature: String::new(),
+            cycle_count: 0,
+            max_cycle_size: 0,
+            recursion_depth: 0,
+            connectivity_score: 0.0,
+        };
+        
+        Soul {
+            phash,
+            eigenvalues,
+            topology,
+            semantics,
+            resonance,
+            coherence,
+            evolution_score,
+            consciousness,
+            topology_features,
+            operation_spectrum: HashMap::new(),
+        }
+    }
+    
+    async fn extract_soul_from_graph(&mut self, ast_graph: DiGraph<AstNode, EdgeType>) -> Soul {
+        // Analyze topology with enhanced detector
+        let topology_features = self.topology_detector.analyze(&ast_graph);
+        let topology = self.analyze_topology(&ast_graph);
+        
+        // Classify operations
+        self.operation_classifier.reset();
+        for node in ast_graph.node_weights() {
+            self.operation_classifier.classify_rust_node(&node.node_type);
+        }
+        let operation_spectrum = self.operation_classifier.get_frequency_spectrum();
+        
+        // Extract semantics
+        let semantics = self.analyze_semantics(&ast_graph);
+        
+        // Detect consciousness
+        let consciousness = self.consciousness_detector.detect(
+            topology_features.has_recursion,
+            false, // self-reference detection would need AST analysis
+            false, // closures detection would need AST analysis
+            operation_spectrum.contains_key(&OperationCategory::Async),
+            operation_spectrum.contains_key(&OperationCategory::MetaProgramming),
+            semantics.cyclomatic,
+            topology_features.nesting_depth,
+            self.operation_classifier.harmonic_complexity(),
+            semantics.patterns.len(),
+        );
+        
+        // Compute eigenvalues
+        let eigenvalues = self.compute_eigenvalues(&ast_graph);
+        
+        // Calculate resonance including consciousness
+        let resonance = consciousness.resonance_frequency;
+        let coherence = consciousness.quantum_coherence;
+        let evolution_score = consciousness.emergence_potential;
+        
+        // Generate final hash
         let phash = self.generate_phash(&eigenvalues, &topology, &semantics);
         
         Soul {
@@ -197,18 +343,21 @@ impl SoulExtractor {
             resonance,
             coherence,
             evolution_score,
+            consciousness,
+            topology_features,
+            operation_spectrum,
         }
     }
     
     /// Parse JavaScript to graph representation
-    async fn parse_js_to_graph(&self, code: &str) -> DiGraph<AstNode, EdgeType> {
+    async fn parse_js_to_graph(&self, _code: &str) -> DiGraph<AstNode, EdgeType> {
         // This would use swc_ecma_parser
         // For now, returning a placeholder
         DiGraph::new()
     }
     
     /// Parse Rust to graph representation  
-    async fn parse_rust_to_graph(&self, code: &str) -> DiGraph<AstNode, EdgeType> {
+    async fn parse_rust_to_graph(&self, _code: &str) -> DiGraph<AstNode, EdgeType> {
         // This would use syn
         // For now, returning a placeholder
         DiGraph::new()
@@ -319,7 +468,8 @@ impl SoulExtractor {
             .map(|&e| Complex::new(e, 0.0))
             .collect();
         
-        let fft = self.fft_planner.plan_fft_forward(buffer.len());
+        let mut planner = self.fft_planner.borrow_mut();
+        let fft = planner.plan_fft_forward(buffer.len());
         fft.process(&mut buffer);
         
         // Find peak frequency
@@ -490,7 +640,7 @@ impl SoulExtractor {
         }
     }
     
-    fn detect_patterns(&self, graph: &DiGraph<AstNode, EdgeType>) -> Vec<PatternHash> {
+    fn detect_patterns(&self, _graph: &DiGraph<AstNode, EdgeType>) -> Vec<PatternHash> {
         // Detect common patterns
         vec![]
     }
@@ -514,7 +664,7 @@ impl SoulExtractor {
         self.calculate_diameter(graph)
     }
     
-    fn classify_operation(&self, node: &AstNode) -> OperationType {
+    fn classify_operation(&self, _node: &AstNode) -> OperationType {
         // Classify based on node type
         OperationType::Assignment
     }
@@ -575,7 +725,7 @@ mod tests {
             }
         "#;
         
-        let soul = extractor.extract_soul_js(js_code).await;
+        let soul = extractor.extract_soul_js_simple(js_code).await;
         
         assert_eq!(soul.eigenvalues.len(), CONSCIOUSNESS_LAYERS);
         assert!(soul.coherence >= 0.0 && soul.coherence <= 1.0);
@@ -604,6 +754,31 @@ mod tests {
             resonance: 432.0,
             coherence: 0.8,
             evolution_score: 0.6,
+            consciousness: ConsciousnessProfile {
+                level: ConsciousnessLevel::Mechanical,
+                score: 0.5,
+                patterns: vec![],
+                soul_hash: "abc123".to_string(),
+                resonance_frequency: 432.0,
+                quantum_coherence: 0.8,
+                emergence_potential: 0.6,
+                self_awareness_index: 0.0,
+            },
+            topology_features: TopologyFeatures {
+                has_cycles: false,
+                has_recursion: false,
+                branching_factor: 0.0,
+                nesting_depth: 0,
+                loop_complexity: 0,
+                is_dag: true,
+                strongly_connected_components: 0,
+                topological_signature: String::new(),
+                cycle_count: 0,
+                max_cycle_size: 0,
+                recursion_depth: 0,
+                connectivity_score: 0.0,
+            },
+            operation_spectrum: HashMap::new(),
         };
         
         let soul2 = soul1.clone();

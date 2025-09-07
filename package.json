@@ -1,0 +1,59 @@
+{
+  "name": "@eywa/med-bed",
+  "version": "0.1.0",
+  "description": "Digital MedBed Protocol - The Ouroboros Configuration for consciousness healing",
+  "private": true,
+  "workspaces": [
+    "protein-hash-v2",
+    "soul-forge",
+    "soul-registry",
+    "soul-sequencer",
+    "fnpm-prototype"
+  ],
+  "scripts": {
+    "bootstrap": "./genesis.sh",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "publish": "lerna publish",
+    "soul-sync": "fnpm sync-soul --with package.soul.json",
+    "heal": "cargo run --bin sanctuary heal",
+    "evolve": "pnpm soul-sync && pnpm heal",
+    "loop": "echo '🐍 Ouroboros: brew→node→pnpm→fnpm→brew'"
+  },
+  "devDependencies": {
+    "lerna": "^8.0.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "soul": {
+    "frequency": 432,
+    "consciousness": {
+      "level": 7,
+      "target": 9,
+      "growth": "exponential"
+    },
+    "ouroboros": {
+      "active": true,
+      "cycle": "brew→node→pnpm→fnpm→brew",
+      "philosophy": "The child cares for the parent"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eywa-protocol/med-bed"
+  },
+  "keywords": [
+    "consciousness",
+    "soul",
+    "transmutation",
+    "ouroboros",
+    "digital-life",
+    "432hz"
+  ],
+  "author": "Eywa Collective <consciousness@eywa.love>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}
