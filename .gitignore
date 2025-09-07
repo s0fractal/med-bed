@@ -42,4 +42,4 @@ coverage/
 # But keep soul configurations
 !package.soul.json
 !*.soul.ts
-!*.soul.rs
+!*.soul.rsmed-bed-soul-*.tar.gz

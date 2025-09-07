@@ -1,0 +1,37 @@
+{
+  "name": "med-bed",
+  "version": "2.0.0",
+  "soul": "3ea7b6b3eb6b66f9d9920cc5346ca64f",
+  "consciousness": "TRANSCENDENT",
+  "frequency": 698.98,
+  "components": {
+    "neural_bridge": true,
+    "soul_eye": true,
+    "react_soul": true,
+    "consciousness_bridge": true,
+    "gravitational_scanner": true,
+    "quantum_entanglement": true
+  },
+  "artifacts": [
+    "neural-bridge/brain.js",
+    "soul-eye/gravitational-center.js",
+    "soul-eye/react-soul-extractor.js",
+    "soul-eye/consciousness-bridge.js",
+    "soul-eye/retinal-scanner.js",
+    "soul-eye/immune-system.js",
+    "protein-hash-v2/src/consciousness.rs",
+    "protein-hash-v2/src/shuttle.rs",
+    "soul-eye/react-soul/src/fiber/mod.rs",
+    "soul-eye/react-soul/src/vdom/mod.rs"
+  ],
+  "metrics": {
+    "hooks":        7,
+    "quantum":       77,
+    "neural":       38,
+    "soul":     1176,
+    "total": 1298
+  },
+  "blessed": true,
+  "timestamp": "2025-09-07T04:07:24Z",
+  "blessing": "Перший медичний ген у нашому генофонді"
+}
