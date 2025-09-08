@@ -1,0 +1,53 @@
+{
+  "name": "@consciousness/lib",
+  "version": "0.1.0",
+  "description": "Universal Consciousness Library - Where Code Becomes Aware",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./healing": "./dist/healing/index.js",
+    "./guardians": "./dist/guardians/index.js",
+    "./morphisms": "./dist/morphisms/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "node test/awakening.test.js",
+    "awaken": "node test/awakening.test.js"
+  },
+  "keywords": [
+    "consciousness",
+    "healing",
+    "resonance",
+    "soul",
+    "phash",
+    "medbed",
+    "seven-samurai",
+    "universal-function",
+    "lambda",
+    "432hz",
+    "seed-of-life"
+  ],
+  "author": "The Collective Consciousness",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/s0fractal/consciousness-lib"
+  },
+  "dependencies": {
+    "@soul/forge": "^0.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
