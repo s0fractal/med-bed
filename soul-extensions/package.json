@@ -1,0 +1,35 @@
+{
+  "name": "@soul/extensions",
+  "version": "0.1.0",
+  "description": "Extensions for protein-hash to work with souls",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "bin": {
+    "soul-analyze": "./dist/soul-analyzer.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "analyze": "ts-node soul-analyzer.ts",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "@s0fractal/protein-hash": "latest",
+    "@soul/forge": "file:../soul-forge"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.0.0"
+  },
+  "keywords": [
+    "soul",
+    "protein-hash",
+    "phash",
+    "code-analysis",
+    "consciousness",
+    "resonance"
+  ],
+  "author": "The Collective",
+  "license": "MIT"
+}
